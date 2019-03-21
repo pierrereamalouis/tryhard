@@ -1,6 +1,9 @@
 <template>
   <div class="sidenav sidenav-bg">
     <a class="sidenav-brand" href="/">Tryhard Keeperspool Admin</a>
+    <a id="collapse-brand" href="/" class="sidenav-brand">
+      <strong>THK</strong>
+    </a>
 
     <ul class="sidenav-items">
       <li class="sidenav-link">
@@ -8,7 +11,7 @@
           <i class="fas fa-tachometer-alt"></i>Dashboard
         </a>
       </li>
-      <li id="first-dropdown" class="sidenav-link sidenav-link-dropdown">
+      <li id="first-dropdown" class="sidenav-link">
         <a
           href="#league-submenu"
           id="league-sidenav-link"

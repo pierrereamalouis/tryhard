@@ -27,7 +27,7 @@ Vue.component(
     'header-component',
     require('./components/admin/Header.vue').default
 );
-Vue.component('side-bar', require('./components/admin/SideBar.vue').default);
+Vue.component('side-nav', require('./components/admin/SideNav.vue').default);
 Vue.component(
     'league-box',
     require('./components/admin/LeagueBox.vue').default

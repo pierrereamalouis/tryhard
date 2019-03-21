@@ -26,7 +26,7 @@
 <body>
 <div id="app" class="grid">
     <header-component></header-component>
-    <side-bar></side-bar>
+    <side-nav></side-nav>
 
     <div class="content">
         <league-box></league-box>
