@@ -37348,7 +37348,7 @@ var staticRenderFns = [
           ]
         ),
         _vm._v(" "),
-        _c("li", { staticClass: "sidenav-link sidenav-link-dropdown" }, [
+        _c("li", { staticClass: "sidenav-link" }, [
           _c(
             "a",
             {
@@ -37403,7 +37403,7 @@ var staticRenderFns = [
                 ])
               ]),
               _vm._v(" "),
-              _c("li", { staticClass: "sidenav-link sidenav-link-dropdown" }, [
+              _c("li", { staticClass: "sidenav-link" }, [
                 _c(
                   "a",
                   {
@@ -37449,7 +37449,7 @@ var staticRenderFns = [
           )
         ]),
         _vm._v(" "),
-        _c("li", { staticClass: "sidenav-link sidenav-link-dropdown" }, [
+        _c("li", { staticClass: "sidenav-link" }, [
           _c(
             "a",
             {
@@ -37491,7 +37491,7 @@ var staticRenderFns = [
           )
         ]),
         _vm._v(" "),
-        _c("li", { staticClass: "sidenav-link sidenav-link-dropdown" }, [
+        _c("li", { staticClass: "sidenav-link" }, [
           _c(
             "a",
             {
@@ -37506,29 +37506,7 @@ var staticRenderFns = [
             },
             [
               _c("i", { staticClass: "fas fa-cogs" }),
-              _vm._v("3rd-Party API\n        "),
-              _c("span", { staticClass: "caret" })
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "ul",
-            {
-              staticClass: "collapse submenu px-3",
-              attrs: { id: "api-submenu" }
-            },
-            [
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Connection")])
-              ]),
-              _vm._v(" "),
-              _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Teams")])]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Players")])
-              ]),
-              _vm._v(" "),
-              _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Stats")])])
+              _vm._v("3rd-Party API\n      ")
             ]
           )
         ])

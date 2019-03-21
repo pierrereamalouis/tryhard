@@ -32,7 +32,7 @@
           </li>
         </ul>
       </li>
-      <li class="sidenav-link sidenav-link-dropdown">
+      <li class="sidenav-link">
         <a
           id="poolers-sidenav-link"
           href="#pooler-submenu"
@@ -57,7 +57,7 @@
           <li>
             <a href="#" id="leagues-subnav-link">All Poolers</a>
           </li>
-          <li class="sidenav-link sidenav-link-dropdown">
+          <li class="sidenav-link">
             <a
               href="#pooler-teams-submenu"
               data-toggle="collapse"
@@ -80,7 +80,7 @@
           </li>
         </ul>
       </li>
-      <li class="sidenav-link sidenav-link-dropdown">
+      <li class="sidenav-link">
         <a
           href="#player-submenu"
           data-toggle="collapse"
@@ -101,7 +101,7 @@
           </li>
         </ul>
       </li>
-      <li class="sidenav-link sidenav-link-dropdown">
+      <li class="sidenav-link">
         <a
           id="pooler-teams-subnav-link"
           href="#api-submenu"
@@ -111,26 +111,7 @@
           role="button"
         >
           <i class="fas fa-cogs"></i>3rd-Party API
-          <span class="caret"></span>
         </a>
-        <ul id="api-submenu" class="collapse submenu px-3">
-          <li>
-            <a href="#">Connection</a>
-          </li>
-          <!-- Manage third party api connections -->
-          <li>
-            <a href="#">Teams</a>
-          </li>
-          <!-- Page for Teams edit, delete and load team info from thrid party api -->
-          <li>
-            <a href="#">Players</a>
-          </li>
-          <!-- Page for Players edit, delete and load players data from third party api -->
-          <li>
-            <a href="#">Stats</a>
-          </li>
-          <!-- Page for players stats edit, delete and load stats data from third party api -->
-        </ul>
       </li>
     </ul>
   </div>

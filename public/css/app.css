@@ -10771,7 +10771,15 @@ body {
 
 .sidenav .sidenav-items {
   list-style: none;
-  padding: 5px 30px;
+  padding: 1.5rem 0;
+}
+
+.sidenav .sidenav-items li {
+  padding: 0.3rem 1rem;
+}
+
+.sidenav .sidenav-items li.active {
+  background: rgba(139, 147, 160, 0.27);
 }
 
 .sidenav .sidenav-items a {
@@ -10786,6 +10794,10 @@ body {
   outline: none;
 }
 
+.sidenav .sidenav-items .sidenav-link li {
+  padding: 0;
+}
+
 .sidenav .sidenav-items .sidenav-link ul {
   list-style: none;
   padding: 4px 0px;
@@ -10796,17 +10808,6 @@ body {
 }
 
 .sidenav .sidenav-items .sidenav-link a:hover {
-  background: rgba(139, 147, 160, 0.27);
-  border-radius: 7px;
-  width: inherit;
-  color: #c4a674;
-}
-
-.sidenav .sidenav-items .sidenav-link a:first-child.active {
-  background: rgba(139, 147, 160, 0.27);
-  border-radius: 7px;
-  width: inherit;
-  margin: 8px 0;
   color: #c4a674;
 }
 
@@ -11168,12 +11169,13 @@ select {
 
   .caret:after {
     float: none;
-    top: auto;
-    bottom: 10px;
-    right: 50%;
-    content: "\203A";
-    -webkit-transform: translateX(50%);
-    transform: translateX(50%);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    webkit-transform: rotate(90deg);
+    moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
   }
 }
 

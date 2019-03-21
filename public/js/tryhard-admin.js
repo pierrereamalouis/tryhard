@@ -12,7 +12,7 @@ $(document).ready(function() {
     });
 
     /*Add active class once a href tags clicked*/
-    $('a').click(function() {
+    $('.sidenav-items li').click(function() {
         $(this).toggleClass('active');
     });
 
