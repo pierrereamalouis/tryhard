@@ -78,8 +78,8 @@
 
 <!-- Jquery UI CSS  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha256-rByPlHULObEjJ6XQxW/flG2r+22R5dKiAoef+aXWfik=" crossorigin="anonymous" />
-<!-- Custom Script -->
-<script src="{{asset('js/tryhard-admin.js') }}"></script>
+
+<!-- Vue.js and Custom Script -->
 <script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>

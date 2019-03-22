@@ -10789,6 +10789,7 @@ body {
   display: block;
   width: inherit;
   padding: 5px 15px;
+  cursor: pointer;
 }
 
 .sidenav .sidenav-items a:active {

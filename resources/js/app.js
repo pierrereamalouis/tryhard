@@ -8,6 +8,12 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+/* Register BootstrapVue */
+import BootstrapVue from 'bootstrap-vue';
+Vue.use(BootstrapVue);
+/* Importing Boostrap Collapse as a Vue plugin */
+import BCollapse from 'bootstrap-vue/es/components/collapse/collapse';
+Vue.component('b-collapse', BCollapse);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

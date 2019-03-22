@@ -5,46 +5,32 @@
       <strong>THK</strong>
     </a>
 
-    <ul class="sidenav-items" @click="submenu">
+    <ul class="sidenav-items">
       <li class="sidenav-link">
         <a href="/" id="dashboard-sidenav-link">
           <i class="fas fa-tachometer-alt"></i>Dashboard
         </a>
       </li>
       <li id="first-dropdown" class="sidenav-link">
-        <a
-          href="#league-submenu"
-          id="league-sidenav-link"
-          data-toggle="collapse"
-          :aria-expanded="false"
-          aria-controls="league-submenu"
-          role="button"
-        >
+        <a v-b-toggle.league-submenu role="button">
           <i class="fas fa-trophy"></i>League
           <span class="caret"></span>
         </a>
-        <ul class="collapse submenu px-3" id="league-submenu">
+        <b-collapse class="submenu px-3" id="league-submenu">
           <li>
             <a href="/leagues/create" id="new-league-subnav-link">Create New</a>
           </li>
           <li>
             <a href="/leagues" id="leagues-subnav-link">All Leagues</a>
           </li>
-        </ul>
+        </b-collapse>
       </li>
       <li class="sidenav-link">
-        <a
-          id="poolers-sidenav-link"
-          href="#pooler-submenu"
-          data-toggle="collapse"
-          :aria-expanded="submenuExpanded ? true : false"
-          aria-controls="pooler-submenu"
-          role="button"
-        >
+        <a v-b-toggle.pooler-submenu role="button">
           <i class="fas fa-users"></i>Poolers
           <span class="caret"></span>
         </a>
-        <ul class="collapse submenu px-3" id="pooler-submenu">
+        <b-collapse class="submenu px-3" id="pooler-submenu">
           <li>
             <a href="/poolers/create">Create New</a>
           </li>
@@ -57,59 +43,38 @@
           <li>
             <a href="#" id="leagues-subnav-link">All Poolers</a>
           </li>
-          <li class="sidenav-link">
-            <a
-              href="#pooler-teams-submenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              aria-controls="pooler-teams-submenu"
-              role="button"
-              id="pooler-teams-subnav-link"
-            >
-              Poolers Teams
-              <span class="caret"></span>
-            </a>
-            <ul class="collapse submenu px-3" id="pooler-teams-submenu">
-              <li>
-                <a href="/pooler-teams/create">Create New</a>
-              </li>
-              <li>
-                <a href="#" id="leagues-subnav-link">All Leagues</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        </b-collapse>
       </li>
       <li class="sidenav-link">
-        <a
-          href="#player-submenu"
-          data-toggle="collapse"
-          aria-expanded="false"
-          aria-controls="player-submenu"
-          role="button"
-          id="players-sidenav-link"
-        >
+        <a v-b-toggle.pooler-teams-submenu role="button">
+          <i class="fas fa-sitemap"></i>Poolers Teams
+          <span class="caret"></span>
+        </a>
+        <b-collapse class="submenu px-3" id="pooler-teams-submenu">
+          <li>
+            <a href="/pooler-teams/create">Create New</a>
+          </li>
+          <li>
+            <a href="#" id="leagues-subnav-link">All Leagues</a>
+          </li>
+        </b-collapse>
+      </li>
+      <li class="sidenav-link">
+        <a v-b-toggle.player-submenu role="button">
           <i class="fas fa-hockey-puck"></i>Players
           <span class="caret"></span>
         </a>
-        <ul class="collapse submenu px-3" id="player-submenu">
+        <b-collapse class="submenu px-3" id="player-submenu">
           <li>
             <a href="/players/create">Add New</a>
           </li>
           <li>
             <a href="#" id="leagues-subnav-link">All Players</a>
           </li>
-        </ul>
+        </b-collapse>
       </li>
       <li class="sidenav-link">
-        <a
-          id="pooler-teams-subnav-link"
-          href="#api-submenu"
-          data-toggle="collapse"
-          aria-expanded="false"
-          aria-controls="pooler-submenu"
-          role="button"
-        >
+        <a href="#">
           <i class="fas fa-cogs"></i>3rd-Party API
         </a>
       </li>
@@ -120,25 +85,25 @@
 <script>
 export default {
   data() {
-    return {
-      isActive: false,
-      submenuExpanded: false
-    };
+    return {};
   },
+  mounted() {
+    // Listen on bootstrap collaspe state
+    this.$root.$on("bv::collapse::state", (collapseId, isJustShown) => {
+      const element = document.getElementById(collapseId);
 
-  methods: {
-    submenu(e) {
-      const element = e.target.parentElement;
-      if (element.lastChild.classList.contains('submenu')) {
-        element.classList.contains('active')
-          ? element.classList.remove('active')
-          : element.classList.add('active');
+      if (isJustShown) {
+        // Add active class on the li element targeted
+        element.parentElement.classList.add("active");
+        // Add active class on the a element targeted
+        element.parentElement.firstChild.classList.add("active");
+      } else {
+        // Remove active class on the li element targeted
+        element.parentElement.classList.remove("active");
+        // Remove active class on the a element targeted
+        element.parentElement.firstChild.classList.remove("active");
       }
-
-      console.log(e.target);
-    }
-  },
-
-  created() {}
+    });
+  }
 };
 </script>
