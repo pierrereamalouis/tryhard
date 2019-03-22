@@ -1754,37 +1754,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/Header.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/admin/Header.vue?vue&type=script&lang=js& ***!
@@ -1821,9 +1790,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -1897,9 +1864,158 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
+  mounted: function mounted() {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/SideNav.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/admin/SideNav.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      isActive: false,
+      submenuExpanded: false
+    };
+  },
+  methods: {
+    submenu: function submenu(e) {
+      var element = e.target.parentElement;
+
+      if (element.lastChild.classList.contains('submenu')) {
+        element.classList.contains('active') ? element.classList.remove('active') : element.classList.add('active');
+      }
+
+      console.log(e.target);
+    }
+  },
+  created: function created() {}
 });
 
 /***/ }),
@@ -36931,51 +37047,6 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
-/*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
-  \*******************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v("I'm an example component test.")
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/Header.vue?vue&type=template&id=819e5290&":
 /*!***************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/admin/Header.vue?vue&type=template&id=819e5290& ***!
@@ -37046,7 +37117,7 @@ var staticRenderFns = [
       [
         _c("div", { staticClass: "content-box-header" }, [
           _c("img", { attrs: { src: "img/cup.png", alt: "" } }),
-          _vm._v("Leagues\n      ")
+          _vm._v("Leagues\n  ")
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "content-box-nav" }, [
@@ -37264,106 +37335,170 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "sidenav sidenav-bg" }, [
+    _c("a", { staticClass: "sidenav-brand", attrs: { href: "/" } }, [
+      _vm._v("Tryhard Keeperspool Admin")
+    ]),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _c("ul", { staticClass: "sidenav-items", on: { click: _vm.submenu } }, [
+      _vm._m(1),
+      _vm._v(" "),
+      _c(
+        "li",
+        { staticClass: "sidenav-link", attrs: { id: "first-dropdown" } },
+        [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#league-submenu",
+                id: "league-sidenav-link",
+                "data-toggle": "collapse",
+                "aria-expanded": false,
+                "aria-controls": "league-submenu",
+                role: "button"
+              }
+            },
+            [
+              _c("i", { staticClass: "fas fa-trophy" }),
+              _vm._v("League\n        "),
+              _c("span", { staticClass: "caret" })
+            ]
+          ),
+          _vm._v(" "),
+          _vm._m(2)
+        ]
+      ),
+      _vm._v(" "),
+      _c("li", { staticClass: "sidenav-link" }, [
+        _c(
+          "a",
+          {
+            attrs: {
+              id: "poolers-sidenav-link",
+              href: "#pooler-submenu",
+              "data-toggle": "collapse",
+              "aria-expanded": _vm.submenuExpanded ? true : false,
+              "aria-controls": "pooler-submenu",
+              role: "button"
+            }
+          },
+          [
+            _c("i", { staticClass: "fas fa-users" }),
+            _vm._v("Poolers\n        "),
+            _c("span", { staticClass: "caret" })
+          ]
+        ),
+        _vm._v(" "),
+        _vm._m(3)
+      ]),
+      _vm._v(" "),
+      _vm._m(4),
+      _vm._v(" "),
+      _vm._m(5)
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sidenav sidenav-bg" }, [
-      _c("a", { staticClass: "sidenav-brand", attrs: { href: "/" } }, [
-        _vm._v("Tryhard Keeperspool Admin")
-      ]),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "sidenav-brand",
-          attrs: { id: "collapse-brand", href: "/" }
-        },
-        [_c("strong", [_vm._v("THK")])]
-      ),
-      _vm._v(" "),
-      _c("ul", { staticClass: "sidenav-items" }, [
-        _c("li", { staticClass: "sidenav-link" }, [
-          _c("a", { attrs: { href: "/", id: "dashboard-sidenav-link" } }, [
-            _c("i", { staticClass: "fas fa-tachometer-alt" }),
-            _vm._v("Dashboard\n      ")
+    return _c(
+      "a",
+      {
+        staticClass: "sidenav-brand",
+        attrs: { id: "collapse-brand", href: "/" }
+      },
+      [_c("strong", [_vm._v("THK")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "sidenav-link" }, [
+      _c("a", { attrs: { href: "/", id: "dashboard-sidenav-link" } }, [
+        _c("i", { staticClass: "fas fa-tachometer-alt" }),
+        _vm._v("Dashboard\n      ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      { staticClass: "collapse submenu px-3", attrs: { id: "league-submenu" } },
+      [
+        _c("li", [
+          _c(
+            "a",
+            {
+              attrs: { href: "/leagues/create", id: "new-league-subnav-link" }
+            },
+            [_vm._v("Create New")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "/leagues", id: "leagues-subnav-link" } }, [
+            _vm._v("All Leagues")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      { staticClass: "collapse submenu px-3", attrs: { id: "pooler-submenu" } },
+      [
+        _c("li", [
+          _c("a", { attrs: { href: "/poolers/create" } }, [
+            _vm._v("Create New")
           ])
         ]),
         _vm._v(" "),
-        _c(
-          "li",
-          { staticClass: "sidenav-link", attrs: { id: "first-dropdown" } },
-          [
-            _c(
-              "a",
-              {
-                attrs: {
-                  href: "#league-submenu",
-                  id: "league-sidenav-link",
-                  "data-toggle": "collapse",
-                  "aria-expanded": "false",
-                  "aria-controls": "league-submenu",
-                  role: "button"
-                }
-              },
-              [
-                _c("i", { staticClass: "fas fa-trophy" }),
-                _vm._v("League\n        "),
-                _c("span", { staticClass: "caret" })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "ul",
-              {
-                staticClass: "collapse submenu px-3",
-                attrs: { id: "league-submenu" }
-              },
-              [
-                _c("li", [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href: "/leagues/create",
-                        id: "new-league-subnav-link"
-                      }
-                    },
-                    [_vm._v("Create New")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c(
-                    "a",
-                    { attrs: { href: "/leagues", id: "leagues-subnav-link" } },
-                    [_vm._v("All Leagues")]
-                  )
-                ])
-              ]
-            )
-          ]
-        ),
+        _c("li", [
+          _c("a", { attrs: { href: "#", id: "edit-league-subnav-link" } }, [
+            _vm._v("Edit")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#", id: "delete-league-subnav-link" } }, [
+            _vm._v("Delete")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#", id: "leagues-subnav-link" } }, [
+            _vm._v("All Poolers")
+          ])
+        ]),
         _vm._v(" "),
         _c("li", { staticClass: "sidenav-link" }, [
           _c(
             "a",
             {
               attrs: {
-                id: "poolers-sidenav-link",
-                href: "#pooler-submenu",
+                href: "#pooler-teams-submenu",
                 "data-toggle": "collapse",
                 "aria-expanded": "false",
-                "aria-controls": "pooler-submenu",
-                role: "button"
+                "aria-controls": "pooler-teams-submenu",
+                role: "button",
+                id: "pooler-teams-subnav-link"
               }
             },
             [
-              _c("i", { staticClass: "fas fa-users" }),
-              _vm._v("Poolers\n        "),
+              _vm._v("\n            Poolers Teams\n            "),
               _c("span", { staticClass: "caret" })
             ]
           ),
@@ -37372,145 +37507,92 @@ var staticRenderFns = [
             "ul",
             {
               staticClass: "collapse submenu px-3",
-              attrs: { id: "pooler-submenu" }
+              attrs: { id: "pooler-teams-submenu" }
             },
             [
               _c("li", [
-                _c("a", { attrs: { href: "/poolers/create" } }, [
+                _c("a", { attrs: { href: "/pooler-teams/create" } }, [
                   _vm._v("Create New")
                 ])
               ]),
               _vm._v(" "),
               _c("li", [
-                _c(
-                  "a",
-                  { attrs: { href: "#", id: "edit-league-subnav-link" } },
-                  [_vm._v("Edit")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c(
-                  "a",
-                  { attrs: { href: "#", id: "delete-league-subnav-link" } },
-                  [_vm._v("Delete")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", [
                 _c("a", { attrs: { href: "#", id: "leagues-subnav-link" } }, [
-                  _vm._v("All Poolers")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "sidenav-link" }, [
-                _c(
-                  "a",
-                  {
-                    attrs: {
-                      href: "#pooler-teams-submenu",
-                      "data-toggle": "collapse",
-                      "aria-expanded": "false",
-                      "aria-controls": "pooler-teams-submenu",
-                      role: "button",
-                      id: "pooler-teams-subnav-link"
-                    }
-                  },
-                  [
-                    _vm._v("\n            Poolers Teams\n            "),
-                    _c("span", { staticClass: "caret" })
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  {
-                    staticClass: "collapse submenu px-3",
-                    attrs: { id: "pooler-teams-submenu" }
-                  },
-                  [
-                    _c("li", [
-                      _c("a", { attrs: { href: "/pooler-teams/create" } }, [
-                        _vm._v("Create New")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        { attrs: { href: "#", id: "leagues-subnav-link" } },
-                        [_vm._v("All Leagues")]
-                      )
-                    ])
-                  ]
-                )
-              ])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "sidenav-link" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "#player-submenu",
-                "data-toggle": "collapse",
-                "aria-expanded": "false",
-                "aria-controls": "player-submenu",
-                role: "button",
-                id: "players-sidenav-link"
-              }
-            },
-            [
-              _c("i", { staticClass: "fas fa-hockey-puck" }),
-              _vm._v("Players\n        "),
-              _c("span", { staticClass: "caret" })
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "ul",
-            {
-              staticClass: "collapse submenu px-3",
-              attrs: { id: "player-submenu" }
-            },
-            [
-              _c("li", [
-                _c("a", { attrs: { href: "/players/create" } }, [
-                  _vm._v("Add New")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#", id: "leagues-subnav-link" } }, [
-                  _vm._v("All Players")
+                  _vm._v("All Leagues")
                 ])
               ])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "sidenav-link" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                id: "pooler-teams-subnav-link",
-                href: "#api-submenu",
-                "data-toggle": "collapse",
-                "aria-expanded": "false",
-                "aria-controls": "pooler-submenu",
-                role: "button"
-              }
-            },
-            [
-              _c("i", { staticClass: "fas fa-cogs" }),
-              _vm._v("3rd-Party API\n      ")
             ]
           )
         ])
-      ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "sidenav-link" }, [
+      _c(
+        "a",
+        {
+          attrs: {
+            href: "#player-submenu",
+            "data-toggle": "collapse",
+            "aria-expanded": "false",
+            "aria-controls": "player-submenu",
+            role: "button",
+            id: "players-sidenav-link"
+          }
+        },
+        [
+          _c("i", { staticClass: "fas fa-hockey-puck" }),
+          _vm._v("Players\n        "),
+          _c("span", { staticClass: "caret" })
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "ul",
+        {
+          staticClass: "collapse submenu px-3",
+          attrs: { id: "player-submenu" }
+        },
+        [
+          _c("li", [
+            _c("a", { attrs: { href: "/players/create" } }, [_vm._v("Add New")])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "#", id: "leagues-subnav-link" } }, [
+              _vm._v("All Players")
+            ])
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "sidenav-link" }, [
+      _c(
+        "a",
+        {
+          attrs: {
+            id: "pooler-teams-subnav-link",
+            href: "#api-submenu",
+            "data-toggle": "collapse",
+            "aria-expanded": "false",
+            "aria-controls": "pooler-submenu",
+            role: "button"
+          }
+        },
+        [
+          _c("i", { staticClass: "fas fa-cogs" }),
+          _vm._v("3rd-Party API\n      ")
+        ]
+      )
     ])
   }
 ]
@@ -49681,7 +49763,6 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
 Vue.component('header-component', __webpack_require__(/*! ./components/admin/Header.vue */ "./resources/js/components/admin/Header.vue").default);
 Vue.component('side-nav', __webpack_require__(/*! ./components/admin/SideNav.vue */ "./resources/js/components/admin/SideNav.vue").default);
 Vue.component('league-box', __webpack_require__(/*! ./components/admin/LeagueBox.vue */ "./resources/js/components/admin/LeagueBox.vue").default);
@@ -49753,75 +49834,6 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
-
-/***/ }),
-
-/***/ "./resources/js/components/ExampleComponent.vue":
-/*!******************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
-/* harmony import */ var _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/ExampleComponent.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
-  \*************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
 
 /***/ }),
 
@@ -50026,15 +50038,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SideNav_vue_vue_type_template_id_ae93c19e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SideNav.vue?vue&type=template&id=ae93c19e& */ "./resources/js/components/admin/SideNav.vue?vue&type=template&id=ae93c19e&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _SideNav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SideNav.vue?vue&type=script&lang=js& */ "./resources/js/components/admin/SideNav.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SideNav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _SideNav_vue_vue_type_template_id_ae93c19e___WEBPACK_IMPORTED_MODULE_0__["render"],
   _SideNav_vue_vue_type_template_id_ae93c19e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -50048,6 +50062,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/admin/SideNav.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/SideNav.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/admin/SideNav.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SideNav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SideNav.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/SideNav.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SideNav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -50087,8 +50115,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Workspace\tryhard\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Workspace\tryhard\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\PRT_pierre-reama.lou\Documents\workspace\tryhard\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\PRT_pierre-reama.lou\Documents\workspace\tryhard\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

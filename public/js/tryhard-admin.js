@@ -1,20 +1,20 @@
 $(document).ready(function() {
     /* sidenav dropdown menu*/
-    $('.sidenav-link-dropdown').click(function() {
-        $(this)
-            .find('.caret')
-            .toggleClass('caret-up');
-        $(this)
-            .find('ul.sidenav-second-level')
-            .slideToggle(function() {
-                $(this).toggleClass('menu-opened');
-            });
-    });
+    // $('.sidenav-link-dropdown').click(function() {
+    //     $(this)
+    //         .find('.caret')
+    //         .toggleClass('caret-up');
+    //     $(this)
+    //         .find('ul.sidenav-second-level')
+    //         .slideToggle(function() {
+    //             $(this).toggleClass('menu-opened');
+    //         });
+    // });
 
     /*Add active class once a href tags clicked*/
-    $('.sidenav-items li').click(function() {
-        $(this).toggleClass('active');
-    });
+    // $('.sidenav-items li').click(function() {
+    //     $(this).toggleClass('active');
+    // });
 
     /*** Prevents the a href default event from the dropdown a tags ***/
 

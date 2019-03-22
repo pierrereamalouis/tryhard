@@ -10778,6 +10778,7 @@ body {
   padding: 0.3rem 1rem;
 }
 
+.sidenav .sidenav-items li:hover,
 .sidenav .sidenav-items li.active {
   background: rgba(139, 147, 160, 0.27);
 }
@@ -10807,7 +10808,8 @@ body {
   padding-right: 5px;
 }
 
-.sidenav .sidenav-items .sidenav-link a:hover {
+.sidenav .sidenav-items .sidenav-link a:hover,
+.sidenav .sidenav-items .sidenav-link a.active {
   color: #c4a674;
 }
 

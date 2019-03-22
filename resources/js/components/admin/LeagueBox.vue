@@ -1,8 +1,8 @@
 <template>
   <div class="content-box content-box-dashboard-league">
-        <div class="content-box-header">
-        <img src="img/cup.png" alt>Leagues
-        </div>
+    <div class="content-box-header">
+      <img src="img/cup.png" alt>Leagues
+    </div>
     <div class="content-box-nav">
       <ul>
         <li>
@@ -59,8 +59,6 @@
 </template>
 <script>
 export default {
-  mounted() {
-    console.log('Component mounted.');
-  }
+  mounted() {}
 };
 </script>

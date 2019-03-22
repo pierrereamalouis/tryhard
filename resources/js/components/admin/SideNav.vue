@@ -5,7 +5,7 @@
       <strong>THK</strong>
     </a>
 
-    <ul class="sidenav-items">
+    <ul class="sidenav-items" @click="submenu">
       <li class="sidenav-link">
         <a href="/" id="dashboard-sidenav-link">
           <i class="fas fa-tachometer-alt"></i>Dashboard
@@ -16,7 +16,7 @@
           href="#league-submenu"
           id="league-sidenav-link"
           data-toggle="collapse"
-          aria-expanded="false"
+          :aria-expanded="false"
           aria-controls="league-submenu"
           role="button"
         >
@@ -37,7 +37,7 @@
           id="poolers-sidenav-link"
           href="#pooler-submenu"
           data-toggle="collapse"
-          aria-expanded="false"
+          :aria-expanded="submenuExpanded ? true : false"
           aria-controls="pooler-submenu"
           role="button"
         >
@@ -116,3 +116,29 @@
     </ul>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isActive: false,
+      submenuExpanded: false
+    };
+  },
+
+  methods: {
+    submenu(e) {
+      const element = e.target.parentElement;
+      if (element.lastChild.classList.contains('submenu')) {
+        element.classList.contains('active')
+          ? element.classList.remove('active')
+          : element.classList.add('active');
+      }
+
+      console.log(e.target);
+    }
+  },
+
+  created() {}
+};
+</script>

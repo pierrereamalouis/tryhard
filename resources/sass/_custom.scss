@@ -124,6 +124,7 @@ body {
             padding: 0.3rem 1rem;
         }
 
+        li:hover,
         li.active {
             background: rgba(139, 147, 160, 0.27);
         }
@@ -152,7 +153,8 @@ body {
                 padding-right: 5px;
             }
 
-            a:hover {
+            a:hover,
+            a.active {
                 color: #c4a674;
             }
 
