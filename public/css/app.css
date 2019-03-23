@@ -507,7 +507,7 @@ mark,
 }
 
 .blockquote-footer::before {
-  content: "\2014\A0";
+  content: "— ";
 }
 
 .img-fluid {
@@ -10829,7 +10829,7 @@ body {
 
 .caret:after {
   float: right;
-  content: "\203A";
+  content: "›";
   webkit-transform: rotate(90deg);
   moz-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
@@ -10837,11 +10837,11 @@ body {
 }
 
 .caret .caret-up:after {
-  content: "\2039";
+  content: "‹";
 }
 
 .sidenav-link .opened .caret:after {
-  content: "\2039";
+  content: "‹";
 }
 
 /*** MAIN CONTENT STYLE ***/

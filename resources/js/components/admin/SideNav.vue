@@ -1,5 +1,5 @@
 <template>
-  <div class="sidenav sidenav-bg">
+  <div class="sidenav sidenav-bg" @click="emitter">
     <a class="sidenav-brand" href="/">Tryhard Keeperspool Admin</a>
     <a id="collapse-brand" href="/" class="sidenav-brand">
       <strong>THK</strong>
@@ -18,7 +18,7 @@
         </a>
         <b-collapse class="submenu px-3" id="league-submenu">
           <li>
-            <a href="/leagues/create" id="new-league-subnav-link">Create New</a>
+            <a href="/league/create-new" id="new-league-subnav-link">Create New</a>
           </li>
           <li>
             <a href="/leagues" id="leagues-subnav-link">All Leagues</a>
@@ -85,25 +85,36 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      ext: ''
+    };
+  },
+  methods: {
+    emitter() {
+      this.$root.$emit('test');
+    }
   },
   mounted() {
     // Listen on bootstrap collaspe state
-    this.$root.$on("bv::collapse::state", (collapseId, isJustShown) => {
+    this.$root.$on('bv::collapse::state', (collapseId, isJustShown) => {
       const element = document.getElementById(collapseId);
 
       if (isJustShown) {
         // Add active class on the li element targeted
-        element.parentElement.classList.add("active");
+        element.parentElement.classList.add('active');
         // Add active class on the a element targeted
-        element.parentElement.firstChild.classList.add("active");
+        element.parentElement.firstChild.classList.add('active');
       } else {
         // Remove active class on the li element targeted
-        element.parentElement.classList.remove("active");
+        element.parentElement.classList.remove('active');
         // Remove active class on the a element targeted
-        element.parentElement.firstChild.classList.remove("active");
+        element.parentElement.firstChild.classList.remove('active');
       }
-    });
+    }),
+      this.$root.$on('test', () => {
+        this.ext = 'test';
+        console.log(this.ext);
+      });
   }
 };
 </script>

@@ -8,12 +8,28 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-/* Register BootstrapVue */
+/**** Register BootstrapVue ****/
 import BootstrapVue from 'bootstrap-vue';
 Vue.use(BootstrapVue);
 /* Importing Boostrap Collapse as a Vue plugin */
 import BCollapse from 'bootstrap-vue/es/components/collapse/collapse';
 Vue.component('b-collapse', BCollapse);
+
+/**** Regitster Vuetify ****/
+import Vuetify from 'vuetify';
+
+Vue.use(Vuetify, {
+    theme: {
+        primary: '#3f51b5',
+        secondary: '#b0bec5',
+        accent: '#8c9eff',
+        error: '#b71c1c'
+    }
+});
+
+/* Vuetify css */
+import 'vuetify/dist/vuetify.min.css';
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -30,13 +46,25 @@ Vue.component(
     require('./components/admin/Header.vue').default
 );
 Vue.component('side-nav', require('./components/admin/SideNav.vue').default);
+
+// Dashboard
 Vue.component(
     'league-box',
-    require('./components/admin/LeagueBox.vue').default
+    require('./components/admin/dashboard/LeagueBox.vue').default
 );
 Vue.component(
     'pooler-box',
-    require('./components/admin/PoolerBox.vue').default
+    require('./components/admin/dashboard/PoolerBox.vue').default
+);
+Vue.component(
+    'keepers-box',
+    require('./components/admin/dashboard/KeeperBox.vue').default
+);
+
+// League
+Vue.component(
+    'new-league',
+    require('./components/admin/league/NewLeague.vue').default
 );
 
 /**
