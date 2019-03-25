@@ -12,7 +12,7 @@
                 v-model="firstname"
                 :rules="nameRules"
                 label="League name"
-                color="red"
+                color="#6485bd"
                 required
               ></v-text-field>
             </v-flex>
@@ -65,6 +65,7 @@
 </template>
 
 <script>
+import "vuetify/dist/vuetify.min.css";
 export default {
   data() {
     return {

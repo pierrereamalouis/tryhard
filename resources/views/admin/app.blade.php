@@ -11,6 +11,9 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css')}}">
 
+    <!-- Vuetify CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    
     <!-- Google Custom Font Anton -->
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 

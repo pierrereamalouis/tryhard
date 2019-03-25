@@ -2009,6 +2009,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuetify_dist_vuetify_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuetify/dist/vuetify.min.css */ "./node_modules/vuetify/dist/vuetify.min.css");
+/* harmony import */ var vuetify_dist_vuetify_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuetify_dist_vuetify_min_css__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2075,6 +2077,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -60371,7 +60374,7 @@ var render = function() {
                           attrs: {
                             rules: _vm.nameRules,
                             label: "League name",
-                            color: "red",
+                            color: "#6485bd",
                             required: ""
                           },
                           model: {
@@ -98690,10 +98693,8 @@ Vue.component('b-collapse', bootstrap_vue_es_components_collapse_collapse__WEBPA
 
 Vue.use(vuetify__WEBPACK_IMPORTED_MODULE_2___default.a, {
   theme: {
-    primary: '#3f51b5',
-    secondary: '#b0bec5',
-    accent: '#8c9eff',
-    error: '#b71c1c'
+    primary: '#bd9c64',
+    secondary: '#6485bd'
   }
 });
 /* Vuetify css */
@@ -99187,8 +99188,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Workspace\tryhard\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Workspace\tryhard\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Pierre.DESKTOP-974TDPO\workspace\tryhard\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Pierre.DESKTOP-974TDPO\workspace\tryhard\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
