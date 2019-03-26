@@ -9,11 +9,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Tryhard Pool</title>
 
-    <link rel="stylesheet" href="{{ asset('css/app.css')}}">
-
     <!-- Vuetify CSS -->
     <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
-    
+
+    <link rel="stylesheet" href="{{ asset('css/app.css')}}">
+
     <!-- Google Custom Font Anton -->
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 
