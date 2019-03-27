@@ -5,7 +5,7 @@
       <strong>THK</strong>
     </a>
 
-    <ul class="sidenav-items">
+    <ul class="sidenav-items d-flex flex-column">
       <li class="sidenav-link">
         <a href="/" id="dashboard-sidenav-link">
           <i class="fas fa-tachometer-alt"></i>Dashboard

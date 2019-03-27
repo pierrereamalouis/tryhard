@@ -19,7 +19,7 @@
           </v-stepper-header>
 
           <v-stepper-items>
-            <v-stepper-content step="1" class="vStepper">
+            <v-stepper-content step="1">
               <v-card flat class="mb-5" color="light" height="inherit">
                 <v-form v-model="valid">
                   <v-container>
@@ -34,13 +34,7 @@
                       </v-flex>
 
                       <v-flex xs12 md3>
-                        <v-select
-                          v-model="select"
-                          :items="seasons"
-                          :rules="[v => !!v || 'Item is required']"
-                          label="Season"
-                          required
-                        ></v-select>
+                        <v-text-field label="Season" :value="season" disabled></v-text-field>
                       </v-flex>
 
                       <v-flex xs12 md3>
@@ -48,6 +42,7 @@
                           v-model="numPoolers"
                           :rules="numPoolersRules"
                           label="Number Of Poolers"
+                          prepend-icon="format_list_numbered"
                           required
                         ></v-text-field>
                       </v-flex>
@@ -61,18 +56,24 @@
                           lazy
                           full-width
                           width="290px"
-                          height="450px"
                         >
                           <template v-slot:activator="{ on }">
                             <v-text-field
                               v-model="date"
                               label="Keepers List Deadline"
+                              :rules="dateRules"
                               prepend-icon="event"
                               readonly
                               v-on="on"
                             ></v-text-field>
                           </template>
-                          <v-date-picker v-model="date" scrollable>
+                          <v-date-picker
+                            v-model="date"
+                            scrollable
+                            id="datePicker"
+                            :min="minDate"
+                            :max="maxDate"
+                          >
                             <v-spacer></v-spacer>
                             <v-btn flat color="primary" @click="modal = false">Cancel</v-btn>
                             <v-btn flat color="primary" @click="$refs.dialog.save(date)">OK</v-btn>
@@ -84,14 +85,40 @@
                 </v-form>
               </v-card>
 
-              <v-btn :disabled="!valid" color="success" @click="validateLeague">Next</v-btn>
+              <v-btn :disabled="!valid" color="success" @click="e1 = 2">Next</v-btn>
               <!-- <v-btn color="primary" @click="e1 = 2">Continue</v-btn> -->
 
               <v-btn flat @click="reset">Cancel</v-btn>
             </v-stepper-content>
 
             <v-stepper-content step="2">
-              <v-card class="mb-5" color="grey lighten-1" height="200px"></v-card>
+              <v-card flat class="mb-5" color="light" height="inherit">
+                <v-form v-model="valid">
+                  <v-container>
+                    <v-layout v-for="(textfield, index) in numPoolers" :key="index">
+                      <v-flex xs12 md6>
+                        <v-text-field
+                          v-model="poolerName"
+                          :rules="nameRules"
+                          :counter="10"
+                          label="First name"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+
+                      <v-flex xs12 md6>
+                        <v-text-field
+                          v-model="lastname"
+                          :rules="nameRules"
+                          :counter="10"
+                          label="Last name"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+                    </v-layout>
+                  </v-container>
+                </v-form>
+              </v-card>
 
               <v-btn color="secondary darken-1" @click="e1 = 1">Back</v-btn>
               <v-btn color="primary darken-1" @click="e1 = 3">Continue</v-btn>
@@ -100,7 +127,7 @@
             </v-stepper-content>
 
             <v-stepper-content step="3">
-              <v-card class="mb-5" color="grey lighten-1" height="200px"></v-card>
+              <v-card flat class="mb-5" color="light" height="inherit"></v-card>
 
               <v-btn color="primary" @click="e1 = 1">Continue</v-btn>
 
@@ -123,7 +150,7 @@ export default {
       lastname: '',
       nameRules: [v => !!v || 'Name is required'],
       // Number of Pooler Field
-      numPoolers: null,
+      numPoolers: this.toNumber(),
       numPoolersRules: [
         v => !!v || 'Number of poolers is required',
         v => this.isInteger(v) || 'Input must be an integer'
@@ -134,9 +161,20 @@ export default {
       select: null,
       items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
       seasons: ['2016/2017', '2017/2018', '2018/2019'],
+      season: '',
       // Date Picker
-      date: new Date().toISOString().substr(0, 10),
+      date: null,
+      minDate: new Date().toISOString().substr(0, 10),
+      maxDate: null,
       modal: false,
+      dateRules: [v => !!v || 'A Keepers Deadline is required'],
+      // Pooler Fields
+      namePooler: '',
+      namePoolerRules: [
+        v => !!v || 'Name is required',
+        v => v.length <= 10 || 'Name must be less than 15 characters'
+      ],
+
       // Clear Button
       clr: true,
       // Stepper Element
@@ -144,21 +182,35 @@ export default {
     };
   },
   methods: {
-    getSeasonYears() {
+    getSeason() {
       const date = new Date();
-      const firstYear = d.setFullYear(2016);
+      const year = date.getFullYear();
+      const currentMonth = date.getMonth();
+      let yearA, yearB;
 
-      this.seasons.push('2016/2017', '2017/2018', '2018/2019');
+      if (currentMonth > 6) {
+        yearA = year;
+        yearB = year + 1;
+      } else {
+        yearA = year - 1;
+        yearB = year;
+      }
+      this.maxDate = new Date(`10/15/${yearB}`).toISOString().substr(0, 10);
+
+      return (this.season = `${yearA}/${yearB}`);
     },
     isInteger(input) {
       const num = Number(input);
       return Number.isInteger(num);
       //console.log(typeof input);
     },
-    validateLeague() {
+    toNumber() {
+      return Number(this.numPoolers);
+    },
+    validate() {
       this.e1 = 2;
       if (this.$refs.form.validate()) {
-        //this.snackbar = true;
+        this.snackbar = true;
       }
     },
     reset() {
@@ -167,7 +219,7 @@ export default {
     }
   },
   mounted() {
-    //this.seasons.push('2016/2017', '2017/2018', '2018/2019');
+    this.getSeason();
   }
 };
 </script>
@@ -182,8 +234,8 @@ export default {
   height: 100%;
 }
 
-.vStepper {
-  border: 1px solid #ddd;
+#datePicker {
+  height: 500px;
 }
 </style>
 
