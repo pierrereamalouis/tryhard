@@ -10674,6 +10674,7 @@ body {
   grid-template-columns: 15vw auto;
   grid-template-rows: 60px;
   grid-template-areas: ". ." ". content";
+  min-height: 100vh;
 }
 
 #breadcrumb {
@@ -10777,8 +10778,8 @@ body {
   padding: 0.3rem 1rem;
 }
 
-.sidenav .sidenav-items li:hover,
-.sidenav .sidenav-items li.active {
+.sidenav .sidenav-items > li:hover,
+.sidenav .sidenav-items > li.active {
   background: rgba(139, 147, 160, 0.27);
 }
 
@@ -10853,6 +10854,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1em;
+  height: inherit;
 }
 
 /* Content Box Style */
@@ -11134,6 +11136,12 @@ select {
 
 .form .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   right: 0px;
+}
+
+/**** Vuetify Wrap App Div ****/
+
+.application--wrap {
+  min-height: 80vh !important;
 }
 
 /**** Media Queries ****/

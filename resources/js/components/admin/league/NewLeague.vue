@@ -21,14 +21,15 @@
           <v-stepper-items>
             <v-stepper-content step="1">
               <v-card flat class="mb-5" color="light" height="inherit">
-                <v-form v-model="valid">
+                <v-form v-model="valid" ref="form">
                   <v-container>
                     <v-layout>
                       <v-flex xs12 md3>
                         <v-text-field
-                          v-model="firstname"
+                          v-model="leagueName"
                           :rules="nameRules"
                           label="League name"
+                          prepend-icon="fas fa-trophy"
                           required
                         ></v-text-field>
                       </v-flex>
@@ -42,7 +43,8 @@
                           v-model="numPoolers"
                           :rules="numPoolersRules"
                           label="Number Of Poolers"
-                          prepend-icon="format_list_numbered"
+                          prepend-icon="fas fa-users"
+                          type="number"
                           required
                         ></v-text-field>
                       </v-flex>
@@ -85,7 +87,7 @@
                 </v-form>
               </v-card>
 
-              <v-btn :disabled="!valid" color="success" @click="e1 = 2">Next</v-btn>
+              <v-btn :disabled="!valid" color="success" @click="validate">Next</v-btn>
               <!-- <v-btn color="primary" @click="e1 = 2">Continue</v-btn> -->
 
               <v-btn flat @click="reset">Cancel</v-btn>
@@ -99,21 +101,22 @@
                       <v-flex xs12 md6>
                         <v-text-field
                           v-model="poolerName"
-                          :rules="nameRules"
-                          :counter="10"
+                          :rules="poolerNameRules"
+                          :counter="maxCharPoolerName"
                           label="First name"
                           required
                         ></v-text-field>
                       </v-flex>
 
                       <v-flex xs12 md6>
-                        <v-text-field
-                          v-model="lastname"
-                          :rules="nameRules"
-                          :counter="10"
-                          label="Last name"
+                        <v-select
+                          v-model="user"
+                          :items="users"
+                          label="Users"
                           required
-                        ></v-text-field>
+                          :rules="usersRules"
+                          @change="userSelection(this.value)"
+                        ></v-select>
                       </v-flex>
                     </v-layout>
                   </v-container>
@@ -146,11 +149,10 @@ export default {
     return {
       valid: false,
       // League Field
-      firstname: '',
-      lastname: '',
+      leagueName: '',
       nameRules: [v => !!v || 'Name is required'],
       // Number of Pooler Field
-      numPoolers: this.toNumber(),
+      numPoolers: null,
       numPoolersRules: [
         v => !!v || 'Number of poolers is required',
         v => this.isInteger(v) || 'Input must be an integer'
@@ -169,11 +171,19 @@ export default {
       modal: false,
       dateRules: [v => !!v || 'A Keepers Deadline is required'],
       // Pooler Fields
-      namePooler: '',
-      namePoolerRules: [
+      poolerName: '',
+      poolerNameRules: [
         v => !!v || 'Name is required',
-        v => v.length <= 10 || 'Name must be less than 15 characters'
+        v =>
+          v.length <= this.maxCharPoolerName ||
+          'Name must be less than 15 characters'
       ],
+      // Users
+      user: null,
+      usersRules: [v => !!v || 'Selecting a user is required'],
+      users: ['prlouis', 'reams90', 'reama92', 'p-rock'],
+      maxCharLeagueName: 20,
+      maxCharPoolerName: 15,
 
       // Clear Button
       clr: true,
@@ -202,20 +212,25 @@ export default {
     isInteger(input) {
       const num = Number(input);
       return Number.isInteger(num);
-      //console.log(typeof input);
     },
     toNumber() {
       return Number(this.numPoolers);
     },
     validate() {
-      this.e1 = 2;
       if (this.$refs.form.validate()) {
-        this.snackbar = true;
+        this.e1 = 2;
+        console.log(this.numPoolers);
+        //this.snackbar = true;
       }
     },
     reset() {
       this.$refs.form.reset();
       this.e1 = 1;
+    },
+    // Update user array where user selected is no longer available in the select options
+    userSelection(userSelected) {
+      console.log(this.user);
+      this.users = this.users.filter(user => user !== userSelected);
     }
   },
   mounted() {
@@ -227,7 +242,6 @@ export default {
 <style scoped>
 #vApp {
   background-color: #fff;
-  height: inherit;
 }
 
 #newLeagueForm {

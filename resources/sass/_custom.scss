@@ -18,6 +18,7 @@ body {
     grid-template-areas:
         '. .'
         '. content';
+    min-height: 100vh;
 }
 
 #breadcrumb {
@@ -122,8 +123,9 @@ body {
             padding: 0.3rem 1rem;
         }
 
-        li:hover,
-        li.active {
+        // Target only li where parent is ul.sidenav-items
+        > li:hover,
+        > li.active {
             background: rgba(139, 147, 160, 0.27);
         }
 
@@ -200,6 +202,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1em;
+    height: inherit;
 }
 
 /* Content Box Style */
@@ -450,6 +453,12 @@ select {
 .form .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
     right: 0px;
 }
+
+/**** Vuetify Wrap App Div ****/
+.application--wrap {
+    min-height: 80vh !important;
+}
+
 /**** Media Queries ****/
 @media (max-width: 768px) {
     /* SideNav */
