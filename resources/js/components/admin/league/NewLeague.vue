@@ -87,7 +87,7 @@
                 </v-form>
               </v-card>
 
-              <v-btn :disabled="!valid" color="success" @click="validate">Next</v-btn>
+              <v-btn :disabled="!valid" color="success" @click="goNext">Next</v-btn>
               <!-- <v-btn color="primary" @click="e1 = 2">Continue</v-btn> -->
 
               <v-btn flat @click="reset">Cancel</v-btn>
@@ -97,10 +97,10 @@
               <v-card flat class="mb-5" color="light" height="inherit">
                 <v-form v-model="valid">
                   <v-container>
-                    <v-layout v-for="(textfield, index) in numPoolers" :key="index">
+                    <v-layout v-for="(i, index) in numberOfPoolers" :key="index">
                       <v-flex xs12 md6>
                         <v-text-field
-                          v-model="poolerName"
+                          v-model="poolerName[index]"
                           :rules="poolerNameRules"
                           :counter="maxCharPoolerName"
                           label="First name"
@@ -110,12 +110,13 @@
 
                       <v-flex xs12 md6>
                         <v-select
-                          v-model="user"
-                          :items="users"
+                          v-model="user[index]"
+                          :items="userOptions"
                           label="Users"
                           required
                           :rules="usersRules"
-                          @change="userSelection(this.value)"
+                          item-disabled
+                          @change="addPooler"
                         ></v-select>
                       </v-flex>
                     </v-layout>
@@ -132,7 +133,7 @@
             <v-stepper-content step="3">
               <v-card flat class="mb-5" color="light" height="inherit"></v-card>
 
-              <v-btn color="primary" @click="e1 = 1">Continue</v-btn>
+              <v-btn color="primary" @click="validate">Continue</v-btn>
 
               <v-btn flat @click="reset">Cancel</v-btn>
             </v-stepper-content>
@@ -171,17 +172,20 @@ export default {
       modal: false,
       dateRules: [v => !!v || 'A Keepers Deadline is required'],
       // Pooler Fields
-      poolerName: '',
+      poolers: [],
+      poolerName: [],
       poolerNameRules: [
         v => !!v || 'Name is required',
         v =>
           v.length <= this.maxCharPoolerName ||
           'Name must be less than 15 characters'
       ],
+      numberOfPoolers: null,
       // Users
-      user: null,
+      user: [],
       usersRules: [v => !!v || 'Selecting a user is required'],
-      users: ['prlouis', 'reams90', 'reama92', 'p-rock'],
+      users: [],
+      userOptions: [],
       maxCharLeagueName: 20,
       maxCharPoolerName: 15,
 
@@ -192,6 +196,7 @@ export default {
     };
   },
   methods: {
+    // Create seasons option to be selected
     getSeason() {
       const date = new Date();
       const year = date.getFullYear();
@@ -209,20 +214,32 @@ export default {
 
       return (this.season = `${yearA}/${yearB}`);
     },
+    // Check if input is not only a number but specifically a number
     isInteger(input) {
       const num = Number(input);
       return Number.isInteger(num);
     },
+    // Go to the next step in the league form
+    goNext() {
+      this.e1 = 2;
+      this.numberOfPoolers = Number(this.numPoolers);
+    },
+    // Return user inputs as a number
     toNumber() {
       return Number(this.numPoolers);
     },
+    // Verfiy if all the form inputs have cleared the rules
     validate() {
-      if (this.$refs.form.validate()) {
-        this.e1 = 2;
-        console.log(this.numPoolers);
-        //this.snackbar = true;
-      }
+      // if (this.$refs.form.validate()) {
+      //   this.e1 = 2;
+      //   console.log(this.numPoolers);
+      //   //this.snackbar = true;
+      // }
+
+      console.log(this.poolerName);
+      console.log(this.user);
     },
+    // Reset entire form
     reset() {
       this.$refs.form.reset();
       this.e1 = 1;
@@ -231,10 +248,36 @@ export default {
     userSelection(userSelected) {
       console.log(this.user);
       this.users = this.users.filter(user => user !== userSelected);
-    }
+    },
+    addPooler() {}
   },
   mounted() {
     this.getSeason();
+    this.users = [
+      {
+        id: 1,
+        username: 'prlouis'
+      },
+      {
+        id: 2,
+        username: 'reams90'
+      },
+      {
+        id: 3,
+        username: 'reama92'
+      },
+      {
+        id: 4,
+        username: 'p-rock'
+      },
+      {
+        id: 5,
+        username: 'prlouis92'
+      }
+    ];
+    this.users.forEach(user => {
+      this.userOptions.push(user.username);
+    });
   }
 };
 </script>

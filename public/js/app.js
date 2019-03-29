@@ -2154,6 +2154,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     var _this = this;
@@ -2188,18 +2189,21 @@ __webpack_require__.r(__webpack_exports__);
         return !!v || 'A Keepers Deadline is required';
       }],
       // Pooler Fields
-      poolerName: '',
+      poolers: [],
+      poolerName: [],
       poolerNameRules: [function (v) {
         return !!v || 'Name is required';
       }, function (v) {
         return v.length <= _this.maxCharPoolerName || 'Name must be less than 15 characters';
       }],
+      numberOfPoolers: null,
       // Users
-      user: null,
+      user: [],
       usersRules: [function (v) {
         return !!v || 'Selecting a user is required';
       }],
-      users: ['prlouis', 'reams90', 'reama92', 'p-rock'],
+      users: [],
+      userOptions: [],
       maxCharLeagueName: 20,
       maxCharPoolerName: 15,
       // Clear Button
@@ -2209,6 +2213,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    // Create seasons option to be selected
     getSeason: function getSeason() {
       var date = new Date();
       var year = date.getFullYear();
@@ -2226,19 +2231,31 @@ __webpack_require__.r(__webpack_exports__);
       this.maxDate = new Date("10/15/".concat(yearB)).toISOString().substr(0, 10);
       return this.season = "".concat(yearA, "/").concat(yearB);
     },
+    // Check if input is not only a number but specifically a number
     isInteger: function isInteger(input) {
       var num = Number(input);
       return Number.isInteger(num);
     },
+    // Go to the next step in the league form
+    goNext: function goNext() {
+      this.e1 = 2;
+      this.numberOfPoolers = Number(this.numPoolers);
+    },
+    // Return user inputs as a number
     toNumber: function toNumber() {
       return Number(this.numPoolers);
     },
+    // Verfiy if all the form inputs have cleared the rules
     validate: function validate() {
-      if (this.$refs.form.validate()) {
-        this.e1 = 2;
-        console.log(this.numPoolers); //this.snackbar = true;
-      }
+      // if (this.$refs.form.validate()) {
+      //   this.e1 = 2;
+      //   console.log(this.numPoolers);
+      //   //this.snackbar = true;
+      // }
+      console.log(this.poolerName);
+      console.log(this.user);
     },
+    // Reset entire form
     reset: function reset() {
       this.$refs.form.reset();
       this.e1 = 1;
@@ -2249,10 +2266,32 @@ __webpack_require__.r(__webpack_exports__);
       this.users = this.users.filter(function (user) {
         return user !== userSelected;
       });
-    }
+    },
+    addPooler: function addPooler() {}
   },
   mounted: function mounted() {
+    var _this2 = this;
+
     this.getSeason();
+    this.users = [{
+      id: 1,
+      username: 'prlouis'
+    }, {
+      id: 2,
+      username: 'reams90'
+    }, {
+      id: 3,
+      username: 'reama92'
+    }, {
+      id: 4,
+      username: 'p-rock'
+    }, {
+      id: 5,
+      username: 'prlouis92'
+    }];
+    this.users.forEach(function (user) {
+      _this2.userOptions.push(user.username);
+    });
   }
 });
 
@@ -60831,7 +60870,7 @@ var render = function() {
                           "v-btn",
                           {
                             attrs: { disabled: !_vm.valid, color: "success" },
-                            on: { click: _vm.validate }
+                            on: { click: _vm.goNext }
                           },
                           [_vm._v("Next")]
                         ),
@@ -60874,8 +60913,8 @@ var render = function() {
                               [
                                 _c(
                                   "v-container",
-                                  _vm._l(_vm.numPoolers, function(
-                                    textfield,
+                                  _vm._l(_vm.numberOfPoolers, function(
+                                    i,
                                     index
                                   ) {
                                     return _c(
@@ -60894,11 +60933,15 @@ var render = function() {
                                                 required: ""
                                               },
                                               model: {
-                                                value: _vm.poolerName,
+                                                value: _vm.poolerName[index],
                                                 callback: function($$v) {
-                                                  _vm.poolerName = $$v
+                                                  _vm.$set(
+                                                    _vm.poolerName,
+                                                    index,
+                                                    $$v
+                                                  )
                                                 },
-                                                expression: "poolerName"
+                                                expression: "poolerName[index]"
                                               }
                                             })
                                           ],
@@ -60911,24 +60954,19 @@ var render = function() {
                                           [
                                             _c("v-select", {
                                               attrs: {
-                                                items: _vm.users,
+                                                items: _vm.userOptions,
                                                 label: "Users",
                                                 required: "",
-                                                rules: _vm.usersRules
+                                                rules: _vm.usersRules,
+                                                "item-disabled": ""
                                               },
-                                              on: {
-                                                change: function($event) {
-                                                  return _vm.userSelection(
-                                                    this.value
-                                                  )
-                                                }
-                                              },
+                                              on: { change: _vm.addPooler },
                                               model: {
-                                                value: _vm.user,
+                                                value: _vm.user[index],
                                                 callback: function($$v) {
-                                                  _vm.user = $$v
+                                                  _vm.$set(_vm.user, index, $$v)
                                                 },
-                                                expression: "user"
+                                                expression: "user[index]"
                                               }
                                             })
                                           ],
@@ -60995,11 +61033,7 @@ var render = function() {
                           "v-btn",
                           {
                             attrs: { color: "primary" },
-                            on: {
-                              click: function($event) {
-                                _vm.e1 = 1
-                              }
-                            }
+                            on: { click: _vm.validate }
                           },
                           [_vm._v("Continue")]
                         ),
